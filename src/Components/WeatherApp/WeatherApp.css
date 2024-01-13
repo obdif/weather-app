@@ -2,11 +2,29 @@
     width: 380px;
     height: 550px;
     margin: auto;
+    box-sizing: border-box;
     margin-top: 60px;
     background-image: linear-gradient(180deg,  #003566 40%, #001a33 80%,  #000d1a 100%, #001a33 );
     border-radius: 13px;
     color: white;
  }
+
+ @media only screen and (max-width: 600px){
+    .container{
+        margin: auto;
+        padding-top: 50px;
+        height: 100vh;
+        box-sizing: border-box;
+        background-image: linear-gradient(180deg,  #003566 40%, #001a33 80%,  #000d1a 100%, #001a33 );
+        color: white;
+     }
+
+     .wather-info{
+        margin-top: 0px;
+    }
+ 
+ 
+}
 
  .container .search-bar{
     padding-top: 30px;
