@@ -8,7 +8,11 @@ import rain from '../Assets/rain.png'
 import search_icon from '../Assets/search.png'
 import snow from '../Assets/snow.png'
 import wind from '../Assets/wind.png'
-
+import earth from '../Assets/earth.gif'
+import night from '../Assets/night.png'
+import scattered from '../Assets/scattered.png'
+import broken from '../Assets/broken-cloud.png'
+import thunder from '../Assets/thunder.png'
 
 
 const WeatherApp = () => {
@@ -46,38 +50,61 @@ const WeatherApp = () => {
 
 
 
-        if(data.weather[0].icon==='01d' || data.weather[0].icon==='01n')
+        if(data.weather[0].icon==='01d')
         {
             setIcon(clear)
+        }
+        else if(data.weather[0].icon==='01n'){
+            setIcon(night)
         }
         else if(data.weather[0].icon==='02d' || data.weather[0].icon==='02n'){
             setIcon(cloud)
         }
-        else if(data.weather[0].icon==='03d' || data.weather[0].icon==='03n')
+        else if(data.weather[0].icon==='03d')
         {
-            setIcon(drizzle)
+            setIcon(scattered)
+        }
+        else if ( data.weather[0].icon==='03n'){
+            setIcon(scattered)
+        }
+        else if ( data.weather[0].icon==='04n' || data.weather[0].icon==='04d'){
+            setIcon(broken)
         }
     
+        else if(data.weather[0].icon==='09d' || data.weather[0].icon==='09n'){
+            setIcon(rain)
+        }
+
         else if(data.weather[0].icon==='010d' || data.weather[0].icon==='010n'){
             setIcon(rain)
+        }
+        else if(data.weather[0].icon==='011d' || data.weather[0].icon==='011n'){
+            setIcon(thunder)
         }
         else if(data.weather[0].icon==='013d' || data.weather[0].icon==='013n'){
             setIcon(snow)
         }
         else{
-            setIcon(clear)
+            setIcon(scattered)
         }
 
     }
 
     return(
         <div className='container'>
+
+            <div className="eart-image">
+                <img src={earth} alt="earth_gif" srcset="" />
+            </div>
+
             <div className='search-bar'>
                 <input type="text" className='searchInput' placeholder='Search Any Location...'/>
                 <div className='search-icon' onClick={() => {search()}}>
                     <img src={search_icon} alt=''/>
                 </div>
             </div>
+            
+
             <div className="weather-content">
 
                 <div className="weather-image">
